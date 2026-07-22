@@ -9,6 +9,12 @@ size = Vector2(1712, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(85, 698)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ism5t"]
+size = Vector2(163, 135)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nrskm"]
+font_color = Color(0, 0, 0, 1)
+
 [node name="main" type="Node2D" unique_id=823663925]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1715304485]
@@ -64,3 +70,24 @@ texture = ExtResource("2_0wfyh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=770219918]
 position = Vector2(1363, 291)
 shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="bedroom" type="Area2D" parent="." unique_id=684246322]
+
+[node name="Sprite2D" type="Sprite2D" parent="bedroom" unique_id=437130536]
+position = Vector2(950, 308)
+texture = ExtResource("2_0wfyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bedroom" unique_id=1492687454]
+position = Vector2(935, 307.5)
+shape = SubResource("RectangleShape2D_ism5t")
+
+[node name="Label" type="Label" parent="bedroom" unique_id=1295165033]
+offset_left = 925.0
+offset_top = 284.0
+offset_right = 996.0
+offset_bottom = 333.0
+text = "Enter 
+bedroom"
+label_settings = SubResource("LabelSettings_nrskm")
+
+[connection signal="body_entered" from="bedroom" to="player" method="_on_bedroom_body_entered"]
