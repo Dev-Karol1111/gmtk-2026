@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ism5t"]
 size = Vector2(130, 132)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1252491199]
+[node name="player" type="CharacterBody2D" unique_id=1252491199]
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=705527641]
@@ -14,3 +14,6 @@ texture = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1322385453]
 shape = SubResource("RectangleShape2D_ism5t")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=403509752]
+position_smoothing_enabled = true
