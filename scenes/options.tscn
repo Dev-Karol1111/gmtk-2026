@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://i735lwuv2rik"]
+
+[ext_resource type="Script" uid="uid://doxcm2f85knoe" path="res://scripts/ui/options.gd" id="1_c2u1v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aey7d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aey7d"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.16062862, 0.16062862, 0.16062862, 0.6)
+shadow_size = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6y0u"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 9
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2n5p"]
+
+[node name="options" type="Control" unique_id=670678143]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c2u1v")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=510688676]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.41614383, 0.50866896, 1, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1606058965]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_top = 58.0
+offset_right = 76.5
+offset_bottom = 113.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Options"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=786504915]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.5
+offset_top = -120.5
+offset_right = 186.5
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 89
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=842170500]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=631704543]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_aey7d")
+text = "Audio"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer" unique_id=1852850996]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1496869275]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="btnReturnMenu" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=825393174]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_aey7d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w6y0u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c2n5p")
+text = "Back
+"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/btnReturnMenu" to="." method="_on_btn_return_menu_pressed"]
