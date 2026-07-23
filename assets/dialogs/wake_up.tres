@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://dlfkogq60qpeg"]
+
+[ext_resource type="Script" uid="uid://d366eisakga4q" path="res://scripts/dialog_node.gd" id="1_ijhw1"]
+[ext_resource type="Script" uid="uid://ca66leic8eb4g" path="res://scripts/dialog_data.gd" id="2_d30oi"]
+
+[sub_resource type="Resource" id="Resource_ijhw1"]
+script = ExtResource("1_ijhw1")
+id = "doctor-1"
+text = "Welcome back! There's
+something I have to tell you.
+We did a bunch of test on you
+and it turns out you are
+terminaly ill."
+options = Dictionary[String, String]({
+"Are you kidding me?!": "q-joke",
+"How long do I have left?": "q-time-left",
+"Ow uh ok then...": "continue"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_d30oi"]
+script = ExtResource("1_ijhw1")
+id = "q-time-left"
+text = "You only have 24 hours left. I'm sorry."
+options = Dictionary[String, String]({
+"Ask something else": "doctor-1"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_4cd6u"]
+script = ExtResource("1_ijhw1")
+id = "q-joke"
+text = "Sadly I'm not, you will die in 24 hours"
+options = Dictionary[String, String]({
+"Ask something else": "doctor-1"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_4ykdn"]
+script = ExtResource("1_ijhw1")
+id = "continue"
+text = "Hard to process right? Heaven will find you in 24 hours\""
+options = Dictionary[String, String]({
+"End conversation": "end"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_cxbdb"]
+script = ExtResource("1_ijhw1")
+id = "end"
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[resource]
+script = ExtResource("2_d30oi")
+id = "wake-up"
+starting_id = "doctor-1"
+nodes = Array[ExtResource("1_ijhw1")]([SubResource("Resource_ijhw1"), SubResource("Resource_d30oi"), SubResource("Resource_4cd6u"), SubResource("Resource_4ykdn"), SubResource("Resource_cxbdb")])
+metadata/_custom_type_script = "uid://ca66leic8eb4g"

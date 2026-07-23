@@ -1,0 +1,29 @@
+extends CanvasLayer
+
+@onready var options_container : VBoxContainer = $VBoxContainer
+
+@export var options : Array[String] = [
+	"Go sky diving", "Spend time with\nfamily/partner", "Deal unexpect"
+]
+
+var generated_data := false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	hide()
+
+func first_run() -> void:
+	if not generated_data:
+		options.shuffle()
+		var to_display := options.slice(0,3)
+		
+		for o in to_display:
+			var button = Button.new()
+			button.text = o
+			options_container.add_child(button)
+		
+		generated_data = true
+			
+	
+	show()
+	
