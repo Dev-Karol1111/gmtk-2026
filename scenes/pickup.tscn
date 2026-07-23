@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bjw16sjk0pcu4"]
+
+[ext_resource type="Script" uid="uid://bdhg6766mweyu" path="res://scripts/pickup.gd" id="1_7cqbe"]
+[ext_resource type="Texture2D" uid="uid://tlrivxaig010" path="res://assets/tilemap.png" id="1_pg2rt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cqbe"]
+atlas = ExtResource("1_pg2rt")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrskm"]
+size = Vector2(26, 28)
+
+[node name="pickup" type="Node2D" unique_id=274059745]
+script = ExtResource("1_7cqbe")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=677274321]
+texture = SubResource("AtlasTexture_7cqbe")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1030209014]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1366628523]
+shape = SubResource("RectangleShape2D_nrskm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
