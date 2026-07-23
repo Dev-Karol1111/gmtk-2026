@@ -1,5 +1,5 @@
 extends Resource
 class_name PickupData
 
-@export var sprite : AtlasTexture
+@export var sprite : SpriteFrames
 @export var id : String

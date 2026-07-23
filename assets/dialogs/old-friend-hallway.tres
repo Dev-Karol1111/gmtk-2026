@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://dtbot4r64nkvd"]
+
+[ext_resource type="Script" uid="uid://d366eisakga4q" path="res://scripts/dialog_node.gd" id="1_2y7dn"]
+[ext_resource type="Script" uid="uid://ca66leic8eb4g" path="res://scripts/dialog_data.gd" id="2_rgi3g"]
+
+[sub_resource type="Resource" id="Resource_xehum"]
+script = ExtResource("1_2y7dn")
+id = "start"
+text = "You: Hey old friend, what's up?"
+options = Dictionary[String, String]({
+"Hey": "quest"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_glamq"]
+script = ExtResource("1_2y7dn")
+id = "quest"
+text = "Do you wanna come to my birthday party? 
+I know you wanna do a 
+lot of stuff tonight but you can come if you want.
+Will I see you there?"
+options = Dictionary[String, String]({
+"No thanks I'm busy.": "end",
+"Sure see ya then!": "end"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[resource]
+script = ExtResource("2_rgi3g")
+id = "old-firend-hallway"
+starting_id = "start"
+nodes = Array[ExtResource("1_2y7dn")]([SubResource("Resource_xehum"), SubResource("Resource_glamq")])
+metadata/_custom_type_script = "uid://ca66leic8eb4g"
