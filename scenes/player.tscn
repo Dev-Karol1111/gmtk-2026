@@ -224,4 +224,4 @@ position_smoothing_enabled = true
 sprite_frames = SubResource("SpriteFrames_nrskm")
 animation = &"moving_east"
 autoplay = "idle"
-frame_progress = 0.26223236
+frame_progress = 0.6949686
