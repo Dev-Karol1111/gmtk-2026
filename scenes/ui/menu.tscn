@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bab32y8754deb"]
+
+[ext_resource type="Script" uid="uid://cjttxdlagvib3" path="res://scripts/ui/menu.gd" id="1_7w7rl"]
+
+[node name="menu" type="Node2D" unique_id=193100170]
+script = ExtResource("1_7w7rl")
+
+[node name="btnStart" type="Button" parent="." unique_id=1720293213]
+offset_left = 510.0
+offset_top = 264.0
+offset_right = 581.0
+offset_bottom = 295.0
+size_flags_horizontal = 4
+text = "START"
+
+[connection signal="pressed" from="btnStart" to="." method="_on_btn_start_pressed"]
