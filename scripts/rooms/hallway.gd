@@ -13,3 +13,8 @@ func _process(delta: float) -> void:
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	Management.switch_scene("res://scenes/rooms/hospital.tscn")
+
+
+func _on_oldfriend_body_entered(body: Node2D) -> void:
+	Signals.start_dialog.emit(load("res://assets/dialogs/old-friend-hallway.tres"))
+	

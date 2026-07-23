@@ -5,9 +5,11 @@ var mode := "none"
 
 var finished_dialogs : Dictionary[String, bool] = {
 	"wake-up": false,
+	"old-friend-hallway" : false,
 }
 var ended_dialogs : Dictionary[String, bool] = {
 	"wake-up": false,
+	"old-friend-hallway" : false,
 }
 
 func start_game() -> void:
