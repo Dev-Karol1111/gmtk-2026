@@ -1,16 +1,120 @@
 [gd_scene format=3 uid="uid://bab32y8754deb"]
 
 [ext_resource type="Script" uid="uid://cjttxdlagvib3" path="res://scripts/ui/menu.gd" id="1_7w7rl"]
+[ext_resource type="PackedScene" uid="uid://i735lwuv2rik" path="res://scenes/options.tscn" id="2_wedc3"]
 
-[node name="menu" type="Node2D" unique_id=193100170]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aey7d"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.16062862, 0.16062862, 0.16062862, 0.6)
+shadow_size = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6y0u"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 9
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2n5p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wedc3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7w7rl"]
+
+[node name="Control" type="Control" unique_id=961120113]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_7w7rl")
 
-[node name="btnStart" type="Button" parent="." unique_id=1720293213]
-offset_left = 510.0
-offset_top = 264.0
-offset_right = 581.0
-offset_bottom = 295.0
-size_flags_horizontal = 4
-text = "START"
+[node name="ColorRect" type="ColorRect" parent="." unique_id=238241140]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.41614383, 0.50866896, 1, 1)
 
-[connection signal="pressed" from="btnStart" to="." method="_on_btn_start_pressed"]
+[node name="Label" type="Label" parent="." unique_id=531403675]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.5
+offset_top = -244.0
+offset_right = 185.5
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "Bucket List"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1827790929]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.25
+offset_top = -21.0
+offset_right = 106.25
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+
+[node name="btnStart" type="Button" parent="VBoxContainer" unique_id=1569031897]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_aey7d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w6y0u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c2n5p")
+text = "Start"
+
+[node name="btnOption" type="Button" parent="VBoxContainer" unique_id=1883236310]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_aey7d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w6y0u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wedc3")
+text = "Options"
+
+[node name="btnQuit" type="Button" parent="VBoxContainer" unique_id=1322857131]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_aey7d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w6y0u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7w7rl")
+text = "Quit
+"
+
+[node name="options" parent="." unique_id=670678143 instance=ExtResource("2_wedc3")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/btnStart" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/btnOption" to="." method="_on_btn_option_pressed"]
+[connection signal="pressed" from="VBoxContainer/btnQuit" to="." method="_on_btn_quit_pressed"]

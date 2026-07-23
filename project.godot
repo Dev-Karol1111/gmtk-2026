@@ -15,9 +15,14 @@ run/main_scene="uid://bab32y8754deb"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dm15lkcmsdmsr"
+
 [autoload]
 
 Management="*uid://b7iqq3wfnxks3"
+Signals="*uid://bdhq7o8j7sjgo"
 
 [display]
 
@@ -30,4 +35,5 @@ window/stretch/aspect="expand"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

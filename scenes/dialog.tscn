@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dpsf0fsmbqiyu"]
+
+[ext_resource type="Script" uid="uid://bd2aygjk1rqhp" path="res://scripts/dialog_ui.gd" id="1_pkx4w"]
+[ext_resource type="Texture2D" uid="uid://wpjhsm18rke0" path="res://assets/dialog.png" id="2_36pgd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nrskm"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="dialog_ui" type="CanvasLayer" unique_id=2035523184]
+script = ExtResource("1_pkx4w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2092768601]
+position = Vector2(701, 406)
+scale = Vector2(0.7847222, 0.75617284)
+texture = ExtResource("2_36pgd")
+
+[node name="Label" type="Label" parent="." unique_id=741532287]
+offset_left = 596.0
+offset_top = 430.0
+offset_right = 1105.0
+offset_bottom = 612.0
+label_settings = SubResource("LabelSettings_nrskm")
+
+[node name="buttons" type="HBoxContainer" parent="." unique_id=1047518401]
+offset_left = 606.0
+offset_top = 564.0
+offset_right = 1084.0
+offset_bottom = 611.0
