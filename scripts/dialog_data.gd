@@ -1,6 +1,7 @@
 extends Resource
 class_name DialogData
 
+@export var id : String = ""
 @export var starting_id : String = ""
 @export var nodes : Array[DialogNode] = []
 

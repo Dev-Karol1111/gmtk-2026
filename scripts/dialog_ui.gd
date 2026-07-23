@@ -9,10 +9,8 @@ var current_node : DialogNode
 func _ready() -> void:
 	hide()
 	Signals.start_dialog.connect(start_dialog)
-	Signals.start_dialog.emit(load("res://assets/dialogs/wake_up.tres"))
 
 func start_dialog(data: DialogData) -> void:
-	print("starting")
 	show()
 	current_dialog = data
 	show_block(current_dialog.starting_id)
@@ -20,16 +18,13 @@ func start_dialog(data: DialogData) -> void:
 func show_block(node_id: String) -> void:
 	if node_id == "end":
 		hide()
+		Management.finished_dialogs.set(current_dialog.id, true)
 		return
-	
-	print("Id not end")
-	
+		
 	current_node = current_dialog.get_node(node_id)
 	if not current_node:
 		return
-	
-	print("Id found")
-	
+		
 	label.text = current_node.text
 	
 	for child in buttons_container.get_children():

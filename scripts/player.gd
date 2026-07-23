@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	if Management.mode == "dialog":
 		camera.zoom = Vector2(6,6)
 	else:
-		camera.zoom = Vector2(3,3)
+		camera.zoom = Vector2(6,6)
 
 func _physics_process(delta: float) -> void:
 	if Management.mode == "dialog": return
