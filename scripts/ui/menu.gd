@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_btn_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main.tscn") 
+	Management.start_game()
 
 func _on_btn_option_pressed() -> void:
 	$options.show() #show options menu

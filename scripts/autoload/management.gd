@@ -1,12 +1,11 @@
 extends Node
 
-var current_building := "map"
+var current_building := "starting"
+var mode := "none"
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func start_game() -> void:
+	switch_scene("res://scenes/hospital.tscn")
+	mode = "dialog"
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func switch_scene(path: String) -> void:
+	get_tree().change_scene_to_file(path)
