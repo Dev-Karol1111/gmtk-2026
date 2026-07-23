@@ -16,10 +16,22 @@ func _physics_process(delta: float) -> void:
 	
 	if direction != Vector2.ZERO:
 		velocity = direction * speed
+		if abs(direction.x) > abs(direction.y):
+			if direction.x > 0:
+				$AnimatedSprite2D.play("moving_east")
+			else:
+				$AnimatedSprite2D.play("moving_weast")
+		else:
+			if direction.y > 0:
+				$AnimatedSprite2D.play("moving_south")
+			else:
+				$AnimatedSprite2D.play("moving_north")
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, speed)
+		$AnimatedSprite2D.play("idle") 
 	
 	move_and_slide()
+
 
 func _on_bedroom_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://scenes/rooms/bedroom.tscn")
