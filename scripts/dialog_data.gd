@@ -1,0 +1,12 @@
+extends Resource
+class_name DialogData
+
+@export var starting_id : String = ""
+@export var nodes : Array[DialogNode] = []
+
+func get_node(searching_id : String) -> DialogNode:
+	for node in nodes:
+		if node.id == searching_id:
+			return node
+	return null
+	

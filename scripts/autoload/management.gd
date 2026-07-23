@@ -9,3 +9,4 @@ func start_game() -> void:
 
 func switch_scene(path: String) -> void:
 	get_tree().change_scene_to_file(path)
+	Signals.start_dialog.emit(load("res://assets/dialogs/wake_up.tres"))
