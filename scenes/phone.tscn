@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dy4oty2d5yw57"]
+
+[ext_resource type="Texture2D" uid="uid://dhj7ec3mv4v2u" path="res://assets/phone-opened.png" id="1_08mii"]
+[ext_resource type="Script" uid="uid://cmielixduv0ce" path="res://scripts/phone.gd" id="1_ewalk"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=354185189]
+script = ExtResource("1_ewalk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1747673124]
+position = Vector2(564, 312)
+texture = ExtResource("1_08mii")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1622355290]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -171.0
+offset_right = 46.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=2004401719]
+anchors_preset = -1
+anchor_left = 0.45800003
+anchor_top = 0.5
+anchor_right = 0.45800003
+anchor_bottom = 0.5
+offset_left = -47.616028
+offset_top = -171.0
+offset_right = 94.38397
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

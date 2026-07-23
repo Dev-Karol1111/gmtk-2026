@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dpsf0fsmbqiyu" path="res://scenes/dialog.tscn" id="3_cxbdb"]
 [ext_resource type="PackedScene" uid="uid://bjw16sjk0pcu4" path="res://scenes/pickup.tscn" id="4_ptr5v"]
 [ext_resource type="Resource" uid="uid://bxg1fakaos13w" path="res://assets/pickups/phone.tres" id="5_6if2h"]
+[ext_resource type="PackedScene" uid="uid://dy4oty2d5yw57" path="res://scenes/phone.tscn" id="6_6if2h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_la7h8"]
 texture = ExtResource("1_la7h8")
@@ -235,3 +236,6 @@ position = Vector2(118, 64)
 [node name="pickup" parent="." unique_id=274059745 instance=ExtResource("4_ptr5v")]
 position = Vector2(31, 103)
 data = ExtResource("5_6if2h")
+
+[node name="phone" parent="." unique_id=687002674 instance=ExtResource("6_6if2h")]
+position = Vector2(-367, -14)

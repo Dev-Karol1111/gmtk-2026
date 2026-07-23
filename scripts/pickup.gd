@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var sprite : Sprite2D = $sprite
+@onready var phone_scene : CanvasLayer = $"../phone"
 @export var data : PickupData
 
 func _ready() -> void:
@@ -14,5 +15,9 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if data.id == "phone":
-		print("phone picked up")
-	
+		phone_scene.first_run()
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if data.id == "phone":
+		phone_scene.hide()
