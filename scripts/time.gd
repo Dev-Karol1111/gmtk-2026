@@ -8,13 +8,14 @@ var previous_time : int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	previous_time = Management.time_remain
+	adjust_image()
 	
 func _process(delta: float) -> void:
 	if Management.time_remain != previous_time:
-		label.text = "%s Hours" % [Management.time_remain]
 		adjust_image()
 	
 func adjust_image():
+	label.text = "%s Hours" % [Management.time_remain]
 	if Management.time_remain == 24: image.play("24")
 	elif Management.time_remain >= 20: image.play("20")
 	elif Management.time_remain >= 16: image.play("16")
