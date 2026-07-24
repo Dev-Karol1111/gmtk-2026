@@ -19,16 +19,19 @@ func start_dialog(data: DialogData) -> void:
 
 func show_block(node_id: String) -> void:
 	if node_id == "end":
-		dialog.hide()
-		Management.finished_dialogs.set(current_dialog.id, true)
-		Management.mode = "free"
+		end_conversation()
 		return
-		
 	current_node = current_dialog.get_node(node_id)
 	if not current_node:
-		return
+		end_conversation()
+	
+	if current_node.end:
+		end_conversation()
 		
 	label.text = current_node.text
+	
+	if current_node.signal_to_emit:
+		Signals.emit_signal(current_node.signal_to_emit)
 	
 	for child in buttons_container.get_children():
 		child.queue_free()
@@ -40,6 +43,12 @@ func show_block(node_id: String) -> void:
 		buttons_container.add_child(button)
 		
 		button.pressed.connect(func(): show_block(next_id))
+
+func end_conversation():
+	dialog.hide()
+	Management.finished_dialogs.set(current_dialog.id, true)
+	Management.mode = "free"
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
