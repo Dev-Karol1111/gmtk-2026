@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pxy1abg4nkoq"
-path="res://.godot/imported/Skydiving.png-0439a85c6a301fc639499eb2d190c906.ctex"
+path="res://.godot/imported/Skydiving.png-d6d4ea6104ef5967c2d4d4c0092732bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raw/Skydiving.png"
-dest_files=["res://.godot/imported/Skydiving.png-0439a85c6a301fc639499eb2d190c906.ctex"]
+source_file="res://assets/cutscenes/Skydiving.png"
+dest_files=["res://.godot/imported/Skydiving.png-d6d4ea6104ef5967c2d4d4c0092732bd.ctex"]
 
 [params]
 

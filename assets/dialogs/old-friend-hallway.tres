@@ -34,7 +34,7 @@ metadata/_custom_type_script = "uid://d366eisakga4q"
 
 [resource]
 script = ExtResource("2_rgi3g")
-id = "old-firend-hallway"
+id = "old-friend-hallway"
 starting_id = "start"
 nodes = Array[ExtResource("1_2y7dn")]([SubResource("Resource_xehum"), SubResource("Resource_glamq"), SubResource("Resource_2y7dn")])
 metadata/_custom_type_script = "uid://ca66leic8eb4g"

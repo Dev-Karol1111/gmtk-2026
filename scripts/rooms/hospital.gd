@@ -16,4 +16,5 @@ func _on_exit_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void: # Old firend
-	Signals.start_dialog.emit(load("res://assets/dialogs/old-friend-hallway.tres"))
+	if !Management.finished_dialogs["old-friend-hallway"]:
+		Signals.start_dialog.emit(load("res://assets/dialogs/old-friend-hallway.tres"))
