@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://wqaw4pk2ld08"]
 
 [ext_resource type="Texture2D" uid="uid://tlrivxaig010" path="res://assets/tilemap.png" id="1_la7h8"]
+[ext_resource type="Script" uid="uid://b7134di3oqa06" path="res://scripts/rooms/hospital.gd" id="1_w18sx"]
 [ext_resource type="PackedScene" uid="uid://bk3rtxa1ypj1p" path="res://scenes/player.tscn" id="2_ysjay"]
 [ext_resource type="PackedScene" uid="uid://dpsf0fsmbqiyu" path="res://scenes/dialog.tscn" id="3_cxbdb"]
 [ext_resource type="PackedScene" uid="uid://bjw16sjk0pcu4" path="res://scenes/pickup.tscn" id="4_ptr5v"]
@@ -214,7 +215,11 @@ texture = ExtResource("1_la7h8")
 [sub_resource type="TileSet" id="TileSet_nrskm"]
 sources/0 = SubResource("TileSetAtlasSource_ysjay")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrskm"]
+size = Vector2(30, 20)
+
 [node name="hospital" type="Node2D" unique_id=369712395]
+script = ExtResource("1_w18sx")
 
 [node name="floor" type="TileMapLayer" parent="." unique_id=727933397]
 tile_map_data = PackedByteArray("AAAHAAQAAAACAAMAAAAIAAQAAAACAAMAAAAJAAQAAAACAAMAAAALAAQAAAACAAQAAAAAAAAAAAACAAQAAAABAAAAAAACAAQAAAABAAMAAAACAAMAAAABAAQAAAACAAMAAAABAAUAAAACAAMAAAABAAYAAAACAAMAAAACAAAAAAACAAQAAAACAAMAAAACAAMAAAACAAQAAAACAAMAAAACAAUAAAACAAMAAAACAAYAAAACAAMAAAADAAAAAAACAAQAAAADAAMAAAACAAMAAAADAAQAAAACAAMAAAADAAUAAAACAAMAAAADAAYAAAACAAMAAAAEAAAAAAACAAQAAAAEAAMAAAACAAMAAAAEAAQAAAACAAMAAAAEAAUAAAACAAMAAAAEAAYAAAACAAMAAAAFAAAAAAACAAQAAAAFAAMAAAACAAMAAAAFAAQAAAACAAMAAAAFAAUAAAACAAMAAAAFAAYAAAACAAMAAAAGAAAAAAACAAQAAAAGAAMAAAACAAMAAAAGAAQAAAACAAMAAAAGAAUAAAACAAMAAAAGAAYAAAACAAMAAAAHAAAAAAACAAQAAAAHAAMAAAACAAMAAAAHAAUAAAACAAMAAAAHAAYAAAACAAMAAAAIAAAAAAACAAQAAAAIAAMAAAACAAMAAAAIAAUAAAACAAMAAAAIAAYAAAACAAMAAAAJAAAAAAACAAQAAAAJAAMAAAACAAMAAAAJAAUAAAACAAMAAAAJAAYAAAACAAMAAAAKAAAAAAACAAQAAAALAAAAAAACAAQAAAALAAEAAAACAAQAAAALAAIAAAACAAQAAAALAAMAAAACAAQAAAALAAUAAAACAAQAAAALAAYAAAACAAQAAAABAAEAAAABAAEAAAABAAIAAAABAAIAAAACAAEAAAABAAEAAAACAAIAAAABAAIAAAA=")
@@ -229,7 +234,7 @@ tile_map_data = PackedByteArray("AAAKAAQAAAADAAEAAAAKAAUAAAADAAEAAAAKAAYAAAADAAE
 tile_set = SubResource("TileSet_nrskm")
 
 [node name="player" parent="." unique_id=1252491199 instance=ExtResource("2_ysjay")]
-position = Vector2(118, 64)
+position = Vector2(119, 83)
 
 [node name="dialog_ui" parent="." unique_id=2035523184 instance=ExtResource("3_cxbdb")]
 
@@ -238,3 +243,11 @@ position = Vector2(31, 103)
 data = ExtResource("5_6if2h")
 
 [node name="phone" parent="." unique_id=687002674 instance=ExtResource("6_6if2h")]
+
+[node name="exit" type="Area2D" parent="." unique_id=1819757384]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=1038260203]
+position = Vector2(127, 46)
+shape = SubResource("RectangleShape2D_nrskm")
+
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

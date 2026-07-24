@@ -35,3 +35,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_bedroom_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://scenes/rooms/bedroom.tscn")
+
+
+func _on_exit_body_entered(body: Node2D) -> void:
+	Management.switch_scene("res://scenes/hallway.tscn")
