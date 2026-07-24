@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var options_container : VBoxContainer = $VBoxContainer
 
 @export var options : Array[String] = [
-	"Go sky diving", "Spend time with\nfamily/partner", "Deal unexpect"
+	"Go sky diving", "Spend time with\nfamily/partner", "Deal unexpect", "Swimming with sharks"
 ]
 
 var generated_data := false
@@ -30,4 +30,6 @@ func first_run() -> void:
 func check_option(option: String):
 	if option == options[0]: #Sky diving
 		Management.switch_scene("res://scenes/rooms/airplane.tscn")
+	elif option == options[3]: # Swiming with sharks
+		Management.switch_scene("res://scenes/rooms/beach.tscn")
 		
