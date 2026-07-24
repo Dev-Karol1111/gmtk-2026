@@ -13,6 +13,7 @@ script = ExtResource("1_pkx4w")
 [node name="time" parent="." unique_id=314698891 instance=ExtResource("3_tmfn4")]
 
 [node name="dialog" type="Node2D" parent="." unique_id=848705548]
+visible = false
 
 [node name="second_person" type="Sprite2D" parent="dialog" unique_id=1919166761]
 position = Vector2(1021.00006, 327.00003)
