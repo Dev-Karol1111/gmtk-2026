@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bjw16sjk0pcu4" path="res://scenes/pickup.tscn" id="4_ptr5v"]
 [ext_resource type="Resource" uid="uid://bxg1fakaos13w" path="res://assets/pickups/phone.tres" id="5_6if2h"]
 [ext_resource type="PackedScene" uid="uid://dy4oty2d5yw57" path="res://scenes/phone.tscn" id="6_6if2h"]
+[ext_resource type="Texture2D" uid="uid://ds2247xd4tohs" path="res://assets/people/Old_Friend_Base-Wave.png" id="8_54gxf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_la7h8"]
 texture = ExtResource("1_la7h8")
@@ -218,6 +219,31 @@ sources/0 = SubResource("TileSetAtlasSource_ysjay")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrskm"]
 size = Vector2(30, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f71s"]
+atlas = ExtResource("8_54gxf")
+region = Rect2(0, 0, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdtb3"]
+atlas = ExtResource("8_54gxf")
+region = Rect2(16, 0, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w18sx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f71s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdtb3")
+}],
+"loop": 1,
+"name": &"greeting",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ism5t"]
+size = Vector2(18, 27)
+
 [node name="hospital" type="Node2D" unique_id=369712395]
 script = ExtResource("1_w18sx")
 
@@ -249,5 +275,22 @@ data = ExtResource("5_6if2h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=1038260203]
 position = Vector2(127, 46)
 shape = SubResource("RectangleShape2D_nrskm")
+disabled = true
+
+[node name="old_firend" type="Node2D" parent="." unique_id=1203255257]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="old_firend" unique_id=64559527]
+position = Vector2(56, 58)
+sprite_frames = SubResource("SpriteFrames_w18sx")
+animation = &"greeting"
+frame = 1
+frame_progress = 0.84736764
+
+[node name="Area2D" type="Area2D" parent="old_firend" unique_id=209609157]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="old_firend/Area2D" unique_id=311473993]
+position = Vector2(56, 58.5)
+shape = SubResource("RectangleShape2D_ism5t")
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
+[connection signal="body_entered" from="old_firend/Area2D" to="." method="_on_area_2d_body_entered"]

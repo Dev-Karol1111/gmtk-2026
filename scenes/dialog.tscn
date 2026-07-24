@@ -2,26 +2,32 @@
 
 [ext_resource type="Script" uid="uid://bd2aygjk1rqhp" path="res://scripts/dialog_ui.gd" id="1_pkx4w"]
 [ext_resource type="Texture2D" uid="uid://wpjhsm18rke0" path="res://assets/dialog.png" id="2_36pgd"]
+[ext_resource type="PackedScene" uid="uid://nvb1b5cu0atp" path="res://scenes/time.tscn" id="3_tmfn4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nrskm"]
 font_color = Color(0, 0, 0, 1)
 
 [node name="dialog_ui" type="CanvasLayer" unique_id=2035523184]
+visible = false
 script = ExtResource("1_pkx4w")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2092768601]
+[node name="time" parent="." unique_id=314698891 instance=ExtResource("3_tmfn4")]
+
+[node name="dialog" type="Node2D" parent="." unique_id=848705548]
+
+[node name="Sprite2D" type="Sprite2D" parent="dialog" unique_id=2092768601]
 position = Vector2(701, 406)
 scale = Vector2(0.7847222, 0.75617284)
 texture = ExtResource("2_36pgd")
 
-[node name="Label" type="Label" parent="." unique_id=741532287]
+[node name="Label" type="Label" parent="dialog" unique_id=741532287]
 offset_left = 596.0
 offset_top = 430.0
 offset_right = 1105.0
 offset_bottom = 612.0
 label_settings = SubResource("LabelSettings_nrskm")
 
-[node name="buttons" type="HBoxContainer" parent="." unique_id=1047518401]
+[node name="buttons" type="HBoxContainer" parent="dialog" unique_id=1047518401]
 offset_left = 606.0
 offset_top = 564.0
 offset_right = 1084.0

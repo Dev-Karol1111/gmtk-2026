@@ -21,13 +21,20 @@ lot of stuff tonight but you can come if you want.
 Will I see you there?"
 options = Dictionary[String, String]({
 "No thanks I'm busy.": "end",
-"Sure see ya then!": "end"
+"Sure see ya then!": "agree"
 })
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_2y7dn"]
+script = ExtResource("1_2y7dn")
+id = "agree"
+signal_to_emit = "old_firend_agree"
+end = true
 metadata/_custom_type_script = "uid://d366eisakga4q"
 
 [resource]
 script = ExtResource("2_rgi3g")
-id = "old-firend-hallway"
+id = "old-friend-hallway"
 starting_id = "start"
-nodes = Array[ExtResource("1_2y7dn")]([SubResource("Resource_xehum"), SubResource("Resource_glamq")])
+nodes = Array[ExtResource("1_2y7dn")]([SubResource("Resource_xehum"), SubResource("Resource_glamq"), SubResource("Resource_2y7dn")])
 metadata/_custom_type_script = "uid://ca66leic8eb4g"

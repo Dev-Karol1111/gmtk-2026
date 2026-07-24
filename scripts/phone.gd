@@ -14,16 +14,20 @@ func _ready() -> void:
 
 func first_run() -> void:
 	if not generated_data:
-		options.shuffle()
-		var to_display := options.slice(0,3)
+		var options2 := options.duplicate()
+		options2.shuffle()
+		var to_display := options2.slice(0,3)
 		
 		for o in to_display:
 			var button = Button.new()
 			button.text = o
+			button.pressed.connect(check_option.bind(button.text))
 			options_container.add_child(button)
 		
 		generated_data = true
-			
-	
 	show()
 	
+func check_option(option: String):
+	if option == options[0]: #Sky diving
+		Management.switch_scene("res://scenes/rooms/airplane.tscn")
+		
