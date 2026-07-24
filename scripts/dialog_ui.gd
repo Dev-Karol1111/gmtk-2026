@@ -1,24 +1,25 @@
 extends CanvasLayer
 
-@onready var label : Label = $Label
-@onready var buttons_container : HBoxContainer = $buttons
+@onready var label : Label = $dialog/Label
+@onready var buttons_container : HBoxContainer = $dialog/buttons
+@onready var dialog : Node2D = $dialog
 
 var current_dialog : DialogData
 var current_node : DialogNode
 
 func _ready() -> void:
-	hide()
+	dialog.hide()
 	Signals.start_dialog.connect(start_dialog)
 
 func start_dialog(data: DialogData) -> void:
 	Management.mode = "dialog"
-	show()
+	dialog.show()
 	current_dialog = data
 	show_block(current_dialog.starting_id)
 
 func show_block(node_id: String) -> void:
 	if node_id == "end":
-		hide()
+		dialog.hide()
 		Management.finished_dialogs.set(current_dialog.id, true)
 		Management.mode = "free"
 		return

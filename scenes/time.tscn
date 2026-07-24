@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://nvb1b5cu0atp"]
+
+[ext_resource type="Texture2D" uid="uid://baxm1kl0keia0" path="res://assets/player/HP_bar.png" id="1_hxfg6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ism5t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoj08"]
+atlas = ExtResource("1_hxfg6")
+region = Rect2(0, 48, 96, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m821"]
+atlas = ExtResource("1_hxfg6")
+region = Rect2(0, 32, 96, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k208v"]
+atlas = ExtResource("1_hxfg6")
+region = Rect2(0, 16, 96, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbryc"]
+atlas = ExtResource("1_hxfg6")
+region = Rect2(0, 0, 96, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnfmb"]
+atlas = ExtResource("1_hxfg6")
+region = Rect2(0, 80, 96, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6trt8"]
+atlas = ExtResource("1_hxfg6")
+region = Rect2(0, 64, 96, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrskm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoj08")
+}],
+"loop": 1,
+"name": &"12",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m821")
+}],
+"loop": 1,
+"name": &"16",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k208v")
+}],
+"loop": 1,
+"name": &"20",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbryc")
+}],
+"loop": 1,
+"name": &"24",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnfmb")
+}],
+"loop": 1,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6trt8")
+}],
+"loop": 1,
+"name": &"8",
+"speed": 5.0
+}]
+
+[node name="time" type="Node2D" unique_id=314698891]
+
+[node name="Label" type="Label" parent="." unique_id=93935333]
+offset_left = 237.0
+offset_top = 58.0
+offset_right = 400.0
+offset_bottom = 82.0
+text = "24 Hours"
+label_settings = SubResource("LabelSettings_ism5t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749566762]
+position = Vector2(122, 70)
+scale = Vector2(2.125, 2.125)
+sprite_frames = SubResource("SpriteFrames_nrskm")
+animation = &"24"
+autoplay = "24"
