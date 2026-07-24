@@ -9,7 +9,7 @@ func _ready() -> void:
 func kitten_choice(agreed: bool):
 	if agreed:
 		Management.take_damage(1)
-	
+	Signals.start_cutsene.emit(load("res://assets/cutscenes/sky-diving.tres"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -17,4 +17,5 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	Signals.start_dialog.emit(load("res://assets/dialogs/kitten.tres"))
+	if !Management.finished_dialogs["kitten"]:
+		Signals.start_dialog.emit(load("res://assets/dialogs/kitten.tres"))
