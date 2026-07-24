@@ -11,6 +11,7 @@ func _ready() -> void:
 	Signals.start_dialog.connect(start_dialog)
 
 func start_dialog(data: DialogData) -> void:
+	Management.mode = "dialog"
 	show()
 	current_dialog = data
 	show_block(current_dialog.starting_id)
@@ -19,6 +20,7 @@ func show_block(node_id: String) -> void:
 	if node_id == "end":
 		hide()
 		Management.finished_dialogs.set(current_dialog.id, true)
+		Management.mode = "free"
 		return
 		
 	current_node = current_dialog.get_node(node_id)

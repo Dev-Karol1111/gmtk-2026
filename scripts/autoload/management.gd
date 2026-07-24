@@ -7,16 +7,11 @@ var finished_dialogs : Dictionary[String, bool] = {
 	"wake-up": false,
 	"old-friend-hallway" : false,
 }
-var ended_dialogs : Dictionary[String, bool] = {
-	"wake-up": false,
-	"old-friend-hallway" : false,
-}
 
 func start_game() -> void:
 	switch_scene("res://scenes/rooms/hospital.tscn")
 	await get_tree().create_timer(0.5).timeout
 	Signals.start_dialog.emit(load("res://assets/dialogs/wake_up.tres"))
-	mode = "dialog"
 	current_building = "hospital"
 
 func switch_scene(path: String) -> void:
@@ -26,6 +21,6 @@ func _process(delta: float) -> void:
 	check_dialogs()
 	
 func check_dialogs() -> void:
-	if finished_dialogs["wake-up"] and !ended_dialogs["wake-up"]:
-		mode = "free"
+	pass
+
 		
