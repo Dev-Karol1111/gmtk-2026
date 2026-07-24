@@ -25,6 +25,7 @@ func show_block(node_id: String) -> void:
 	current_node = current_dialog.get_node(node_id)
 	if not current_node:
 		end_conversation()
+		return
 	
 	if current_node.end:
 		end_conversation()

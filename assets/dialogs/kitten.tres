@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://cpx7ai36gclau"]
+
+[ext_resource type="Script" uid="uid://d366eisakga4q" path="res://scripts/dialog_node.gd" id="1_o1eqv"]
+[ext_resource type="Script" uid="uid://ca66leic8eb4g" path="res://scripts/dialog_data.gd" id="2_hvo8b"]
+
+[sub_resource type="Resource" id="Resource_taser"]
+script = ExtResource("1_o1eqv")
+id = "start"
+text = "Miauw, could you pet me please miauw?"
+options = Dictionary[String, String]({
+"no": "disagree",
+"yes": "agree"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_87jng"]
+script = ExtResource("1_o1eqv")
+id = "disagree"
+signal_to_emit = "kitten_disagree"
+end = true
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_o1eqv"]
+script = ExtResource("1_o1eqv")
+id = "agree"
+signal_to_emit = "kitten_agree"
+end = true
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[resource]
+script = ExtResource("2_hvo8b")
+id = "kitten"
+starting_id = "start"
+nodes = Array[ExtResource("1_o1eqv")]([SubResource("Resource_taser"), SubResource("Resource_87jng"), SubResource("Resource_o1eqv")])
+metadata/_custom_type_script = "uid://ca66leic8eb4g"

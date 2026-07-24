@@ -6,6 +6,7 @@ var mode := "none"
 var finished_dialogs : Dictionary[String, bool] = {
 	"wake-up": false,
 	"old-friend-hallway" : false,
+	"kitten" : false,
 }
 
 var time_remain := 24

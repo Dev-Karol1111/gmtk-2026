@@ -14,7 +14,7 @@ texture = ExtResource("1_h8ond")
 sources/0 = SubResource("TileSetAtlasSource_ysljl")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrskm"]
-size = Vector2(58, 28)
+size = Vector2(186, 20)
 
 [node name="airplane" type="Node2D" unique_id=1500921204]
 script = ExtResource("1_rgx5d")
@@ -33,7 +33,7 @@ position = Vector2(333, 458)
 [node name="Area2D" type="Area2D" parent="Node2D" unique_id=1027578106]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=1428680139]
-position = Vector2(401, 365)
+position = Vector2(337, 361)
 shape = SubResource("RectangleShape2D_nrskm")
 
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]
