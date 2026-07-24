@@ -8,6 +8,8 @@ var finished_dialogs : Dictionary[String, bool] = {
 	"old-friend-hallway" : false,
 }
 
+var time_remain := 24
+
 func start_game() -> void:
 	switch_scene("res://scenes/rooms/hospital.tscn")
 	await get_tree().create_timer(0.5).timeout

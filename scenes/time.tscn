@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://nvb1b5cu0atp"]
 
 [ext_resource type="Texture2D" uid="uid://baxm1kl0keia0" path="res://assets/player/HP_bar.png" id="1_hxfg6"]
+[ext_resource type="Script" uid="uid://33swsb1llh0y" path="res://scripts/time.gd" id="1_uoj08"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ism5t"]
 
@@ -80,6 +81,7 @@ animations = [{
 }]
 
 [node name="time" type="Node2D" unique_id=314698891]
+script = ExtResource("1_uoj08")
 
 [node name="Label" type="Label" parent="." unique_id=93935333]
 offset_left = 237.0
