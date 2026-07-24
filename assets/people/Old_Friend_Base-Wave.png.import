@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da6847d6lgvde"
-path="res://.godot/imported/Player_Walking_East.png-6f8eee406c7d71844424795c9fa24d2c.ctex"
+uid="uid://ds2247xd4tohs"
+path="res://.godot/imported/Old_Friend_Base-Wave.png-ffd554a4b1a86eed2ecbac2231dfc6b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raw/Player_Walking_East.png"
-dest_files=["res://.godot/imported/Player_Walking_East.png-6f8eee406c7d71844424795c9fa24d2c.ctex"]
+source_file="res://assets/people/Old_Friend_Base-Wave.png"
+dest_files=["res://.godot/imported/Old_Friend_Base-Wave.png-ffd554a4b1a86eed2ecbac2231dfc6b3.ctex"]
 
 [params]
 

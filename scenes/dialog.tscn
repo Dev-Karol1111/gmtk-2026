@@ -8,6 +8,7 @@
 font_color = Color(0, 0, 0, 1)
 
 [node name="dialog_ui" type="CanvasLayer" unique_id=2035523184]
+visible = false
 script = ExtResource("1_pkx4w")
 
 [node name="time" parent="." unique_id=314698891 instance=ExtResource("3_tmfn4")]

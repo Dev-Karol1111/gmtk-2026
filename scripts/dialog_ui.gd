@@ -9,6 +9,7 @@ var current_node : DialogNode
 
 func _ready() -> void:
 	dialog.hide()
+	show()
 	Signals.start_dialog.connect(start_dialog)
 
 func start_dialog(data: DialogData) -> void:
