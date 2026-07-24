@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://dl4qy21oujefj"]
+
+[ext_resource type="Texture2D" uid="uid://dg1bcvd5tkjit" path="res://assets/player/Player_Base.png" id="1_65ihn"]
+[ext_resource type="Script" uid="uid://d366eisakga4q" path="res://scripts/dialog_node.gd" id="1_u1y8m"]
+[ext_resource type="Script" uid="uid://ca66leic8eb4g" path="res://scripts/dialog_data.gd" id="2_65ihn"]
+
+[sub_resource type="Resource" id="Resource_avl6s"]
+script = ExtResource("1_u1y8m")
+id = "start"
+text = "Should I finish this sandcastle?"
+person = "first-person"
+options = Dictionary[String, String]({
+"no": "disagree",
+"yes": "agree"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_65ihn"]
+script = ExtResource("1_u1y8m")
+id = "agree"
+signal_to_emit = "sandcastle_agree"
+end = true
+person = "first-person"
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_ptokj"]
+script = ExtResource("1_u1y8m")
+id = "disagree"
+signal_to_emit = "sandcastle_diagree"
+end = true
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[resource]
+script = ExtResource("2_65ihn")
+id = "sandcastle"
+starting_id = "start"
+nodes = Array[ExtResource("1_u1y8m")]([SubResource("Resource_avl6s"), SubResource("Resource_65ihn"), SubResource("Resource_ptokj")])
+first_person = ExtResource("1_65ihn")
+second_person = ExtResource("1_65ihn")
+metadata/_custom_type_script = "uid://ca66leic8eb4g"
