@@ -33,6 +33,6 @@ func check_option(option: String):
 	elif option == options[3]: # Swiming with sharks
 		Management.switch_scene("res://scenes/rooms/beach.tscn")
 	elif option == options[1]: # Food eating contest
-		Management.switch_scene("res://scenes/rooms/food_contest.tscn")
+		Signals.start_cutsene.emit(load("res://assets/cutscenes/food_eating_contest_thumbnail.tres"))
 	
 		
