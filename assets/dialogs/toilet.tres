@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://ps0568c2kive"]
+
+[ext_resource type="Texture2D" uid="uid://dg1bcvd5tkjit" path="res://assets/player/Player_Base.png" id="1_1ayks"]
+[ext_resource type="Script" uid="uid://d366eisakga4q" path="res://scripts/dialog_node.gd" id="1_ua6md"]
+[ext_resource type="Script" uid="uid://ca66leic8eb4g" path="res://scripts/dialog_data.gd" id="2_1ayks"]
+[ext_resource type="Texture2D" uid="uid://b22kfh4yhflee" path="res://assets/food_contest_tilemap.png" id="4_6bhvl"]
+
+[sub_resource type="Resource" id="Resource_6bhvl"]
+script = ExtResource("1_ua6md")
+id = "start"
+text = "Hey there, are you alright?"
+person = "first-person"
+options = Dictionary[String, String]({
+"continue": "c"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_ps002"]
+script = ExtResource("1_ua6md")
+id = "c"
+text = "Oh, I ate WAY too much,
+could you help me find the toilet"
+person = "second-person"
+options = Dictionary[String, String]({
+"no": "disagree",
+"yes": "agree"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_hhc36"]
+script = ExtResource("1_ua6md")
+id = "agree"
+signal_to_emit = "toilet_agree"
+end = true
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_e3nfn"]
+script = ExtResource("1_ua6md")
+id = "disagree"
+signal_to_emit = "toilet_disagree"
+end = true
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eugp1"]
+atlas = ExtResource("4_6bhvl")
+region = Rect2(96, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_1ayks")
+id = "toilet"
+starting_id = "start"
+nodes = Array[ExtResource("1_ua6md")]([SubResource("Resource_6bhvl"), SubResource("Resource_ps002"), SubResource("Resource_hhc36"), SubResource("Resource_e3nfn")])
+first_person = ExtResource("1_1ayks")
+second_person = SubResource("AtlasTexture_eugp1")
+metadata/_custom_type_script = "uid://ca66leic8eb4g"

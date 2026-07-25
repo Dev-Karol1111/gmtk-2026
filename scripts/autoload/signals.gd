@@ -12,3 +12,6 @@ signal kitten_agree
 
 signal sandcastle_agree
 signal sandcastle_disagree
+
+signal toilet_agree
+signal toilet_disagree
