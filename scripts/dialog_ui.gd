@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var second_person : Sprite2D = $dialog/second_person
 @onready var dialog : Node2D = $dialog
 @onready var taking_damage_animation : Node2D = $taking_damage
+@onready var dying_animation : Node2D = $dying_animation
 
 var current_dialog : DialogData
 var current_node : DialogNode
@@ -19,6 +20,12 @@ func _ready() -> void:
 	show()
 	Signals.start_dialog.connect(start_dialog)
 	Signals.taking_damage_animation.connect(show_taking_damage_animation)
+	Signals.dying_animation.connect(death)
+
+func death():
+	dying_animation.show()
+	await get_tree().create_timer(3).timeout
+	# TODO: Add end screen
 
 func show_taking_damage_animation():
 	taking_damage_animation.show()

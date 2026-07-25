@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wpjhsm18rke0" path="res://assets/dialog.png" id="2_36pgd"]
 [ext_resource type="PackedScene" uid="uid://nvb1b5cu0atp" path="res://scenes/time.tscn" id="3_tmfn4"]
 [ext_resource type="Texture2D" uid="uid://b3wbq57tlmf30" path="res://assets/Damage_animation.png" id="4_auqi6"]
+[ext_resource type="Texture2D" uid="uid://b3pjr72d2orql" path="res://assets/player/Player_dying.png" id="5_4wims"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nrskm"]
 font_color = Color(0, 0, 0, 1)
@@ -28,6 +29,56 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owmcw"]
+atlas = ExtResource("5_4wims")
+region = Rect2(0, 0, 26, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygo2i"]
+atlas = ExtResource("5_4wims")
+region = Rect2(26, 0, 26, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lar43"]
+atlas = ExtResource("5_4wims")
+region = Rect2(52, 0, 26, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0535s"]
+atlas = ExtResource("5_4wims")
+region = Rect2(78, 0, 26, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1v1u"]
+atlas = ExtResource("5_4wims")
+region = Rect2(104, 0, 26, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhrxe"]
+atlas = ExtResource("5_4wims")
+region = Rect2(130, 0, 26, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ism5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owmcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygo2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lar43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0535s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1v1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhrxe")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 4.0
 }]
 
 [node name="dialog_ui" type="CanvasLayer" unique_id=2035523184]
@@ -93,3 +144,13 @@ sprite_frames = SubResource("SpriteFrames_nrskm")
 autoplay = "default"
 frame = 1
 frame_progress = 0.7477662
+
+[node name="dying_animation" type="Node2D" parent="." unique_id=727087256]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="dying_animation" unique_id=1925039836]
+position = Vector2(563, 325)
+scale = Vector2(22.958334, 22.958334)
+sprite_frames = SubResource("SpriteFrames_ism5t")
+autoplay = "default"
+frame_progress = 0.5263301

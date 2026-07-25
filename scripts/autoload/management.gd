@@ -10,7 +10,6 @@ var finished_dialogs : Dictionary[String, bool] = {
 }
 
 var time_remain := 24
-
 func _ready() -> void:
 	Signals.old_firend_agree.connect(old_firend_agreed)
 	Signals.take_damage.connect(take_damage)
@@ -27,7 +26,10 @@ func switch_scene(path: String) -> void:
 
 func take_damage(damage: int):
 	time_remain -= damage
-	Signals.taking_damage_animation.emit()
+	if time_remain <= 0:
+		Signals.dying_animation.emit()
+	else:
+		Signals.taking_damage_animation.emit()
 
 func _process(delta: float) -> void:
 	check_dialogs()
