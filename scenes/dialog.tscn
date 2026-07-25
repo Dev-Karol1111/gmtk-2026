@@ -3,9 +3,32 @@
 [ext_resource type="Script" uid="uid://bd2aygjk1rqhp" path="res://scripts/dialog_ui.gd" id="1_pkx4w"]
 [ext_resource type="Texture2D" uid="uid://wpjhsm18rke0" path="res://assets/dialog.png" id="2_36pgd"]
 [ext_resource type="PackedScene" uid="uid://nvb1b5cu0atp" path="res://scenes/time.tscn" id="3_tmfn4"]
+[ext_resource type="Texture2D" uid="uid://b3wbq57tlmf30" path="res://assets/Damage_animation.png" id="4_auqi6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nrskm"]
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wims"]
+atlas = ExtResource("4_auqi6")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1kyf"]
+atlas = ExtResource("4_auqi6")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrskm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wims")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1kyf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
 
 [node name="dialog_ui" type="CanvasLayer" unique_id=2035523184]
 script = ExtResource("1_pkx4w")
@@ -59,3 +82,14 @@ offset_left = 577.0
 offset_top = 559.0
 offset_right = 1112.0
 offset_bottom = 606.0
+
+[node name="taking_damage" type="Node2D" parent="." unique_id=155604037]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="taking_damage" unique_id=180583888]
+position = Vector2(577, 325)
+scale = Vector2(8.963541, 7.9343247)
+sprite_frames = SubResource("SpriteFrames_nrskm")
+autoplay = "default"
+frame = 1
+frame_progress = 0.7477662

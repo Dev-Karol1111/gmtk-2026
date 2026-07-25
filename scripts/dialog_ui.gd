@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var first_person : Sprite2D = $dialog/first_person
 @onready var second_person : Sprite2D = $dialog/second_person
 @onready var dialog : Node2D = $dialog
+@onready var taking_damage_animation : Node2D = $taking_damage
 
 var current_dialog : DialogData
 var current_node : DialogNode
@@ -17,7 +18,13 @@ func _ready() -> void:
 	dialog.hide()
 	show()
 	Signals.start_dialog.connect(start_dialog)
+	Signals.taking_damage_animation.connect(show_taking_damage_animation)
 
+func show_taking_damage_animation():
+	taking_damage_animation.show()
+	await get_tree().create_timer(3).timeout
+	taking_damage_animation.hide()
+	
 func start_dialog(data: DialogData) -> void:
 	Management.mode = "dialog"
 	dialog.show()

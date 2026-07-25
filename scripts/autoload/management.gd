@@ -27,6 +27,7 @@ func switch_scene(path: String) -> void:
 
 func take_damage(damage: int):
 	time_remain -= damage
+	Signals.taking_damage_animation.emit()
 
 func _process(delta: float) -> void:
 	check_dialogs()
