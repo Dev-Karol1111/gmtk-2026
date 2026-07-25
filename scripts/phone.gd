@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var options_container : VBoxContainer = $VBoxContainer
 
 @export var options : Array[String] = [
-	"Go sky diving", "Food eating contest", "Deal unexpect", "Swimming with sharks"
+	"Go sky diving", "Food eating contest", "Go to work", "Swimming with sharks"
 ]
 
 var generated_data := false
@@ -11,12 +11,12 @@ var generated_data := false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
-
+	
 func first_run() -> void:
 	if not generated_data:
 		var options2 := options.duplicate()
 		options2.shuffle()
-		var to_display := options2.slice(0,3)
+		var to_display := options2.slice(0,4)
 		
 		for o in to_display:
 			var button = Button.new()
@@ -34,5 +34,8 @@ func check_option(option: String):
 		Management.switch_scene("res://scenes/rooms/beach.tscn")
 	elif option == options[1]: # Food eating contest
 		Signals.start_cutsene.emit(load("res://assets/cutscenes/food_eating_contest_thumbnail.tres"))
+	elif option == options[2]: # Go to work
+		#Management.switch_scene("res://scenes/rooms/office.tscn")
+		Signals.start_cutsene.emit(load("res://assets/cutscenes/office.tres"))
 	
 		

@@ -9,6 +9,7 @@ func _ready() -> void:
 func kitten_choice(agreed: bool):
 	if agreed:
 		Management.take_damage(1)
+	Signals.task_finished.emit("sky-diving")
 	Signals.start_cutsene.emit(load("res://assets/cutscenes/sky-diving.tres"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

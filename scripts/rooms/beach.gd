@@ -8,6 +8,7 @@ func _ready() -> void:
 func handle_choice(agree : bool):
 	if agree:
 		Management.take_damage(2)
+	Signals.task_finished.emit("swimming-with-shark")
 	Signals.start_cutsene.emit(load("res://assets/cutscenes/swim-with-sharks.tres"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

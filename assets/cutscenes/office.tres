@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://v5mny0cfg8uc"]
+
+[ext_resource type="PackedScene" uid="uid://fckch2xrsx2m" path="res://scenes/rooms/office.tscn" id="1_gguue"]
+[ext_resource type="Script" uid="uid://bcrqgfvwmcre0" path="res://scripts/cutscene-data.gd" id="1_sclo4"]
+
+[resource]
+script = ExtResource("1_sclo4")
+duration = 10
+returning_scene = ExtResource("1_gguue")
+office = true
+metadata/_custom_type_script = "uid://bcrqgfvwmcre0"

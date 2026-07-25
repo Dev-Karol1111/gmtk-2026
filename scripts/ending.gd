@@ -1,16 +1,10 @@
 extends Node2D
 
-var data : CutsceneData
-
-@onready var image : Sprite2D = $Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if data.office:
-		$Camera2D.zoom = Vector2(.65, .65)
-		$VideoStreamPlayer.show()
-	else:
-		image.texture = data.image
+	await get_tree().create_timer(0.5).timeout
+	Signals.start_dialog.emit(load("res://assets/dialogs/ending.tres"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
