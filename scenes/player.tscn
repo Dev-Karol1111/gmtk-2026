@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://wnj3mphppjxf" path="res://assets/player/Player_Walking_West.png" id="6_fjrip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ism5t"]
-size = Vector2(24, 24)
+size = Vector2(18, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
 atlas = ExtResource("3_tuyoq")
@@ -213,7 +213,6 @@ animations = [{
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1322385453]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_ism5t")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=403509752]

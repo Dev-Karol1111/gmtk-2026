@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://ddyrfp4dmfrll"]
+
+[ext_resource type="Texture2D" uid="uid://clrxcsf6n0sbc" path="res://assets/cutscenes/swim_with_sharks.png" id="1_dfxey"]
+[ext_resource type="Script" uid="uid://bcrqgfvwmcre0" path="res://scripts/cutscene-data.gd" id="1_yap5k"]
+[ext_resource type="PackedScene" uid="uid://wqaw4pk2ld08" path="res://scenes/rooms/hospital.tscn" id="2_t3wpr"]
+
+[resource]
+script = ExtResource("1_yap5k")
+image = ExtResource("1_dfxey")
+returning_scene = ExtResource("2_t3wpr")
+metadata/_custom_type_script = "uid://bcrqgfvwmcre0"

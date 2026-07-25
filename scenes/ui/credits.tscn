@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://bqatnhe27n8de"]
+
+[ext_resource type="Script" uid="uid://cbnjq70dn3f1t" path="res://scripts/ui/credits.gd" id="1_oap8i"]
+
+[sub_resource type="Animation" id="Animation_2ckv8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GridContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(284, 653)]
+}
+
+[sub_resource type="Animation" id="Animation_0ctdu"]
+resource_name = "new_animation"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GridContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9666667, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(284, 653), Vector2(284, 181), Vector2(284, 181)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2fbfq"]
+_data = {
+&"RESET": SubResource("Animation_2ckv8"),
+&"new_animation": SubResource("Animation_0ctdu")
+}
+
+[node name="credits" type="Control" unique_id=817298054]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oap8i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=67727053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=416680058]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.0
+offset_top = 329.0
+offset_right = 292.0
+offset_bottom = 615.00037
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer" unique_id=500184890]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 70
+
+[node name="Label" type="Label" parent="GridContainer/VBoxContainer2" unique_id=670900246]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Made By"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/VBoxContainer2" unique_id=1460003962]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 23
+
+[node name="Label2" type="Label" parent="GridContainer/VBoxContainer2/VBoxContainer" unique_id=818590197]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Lead Developer - DevKarol"
+
+[node name="Label3" type="Label" parent="GridContainer/VBoxContainer2/VBoxContainer" unique_id=477713932]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Developer - BlacknWyt"
+
+[node name="Label4" type="Label" parent="GridContainer/VBoxContainer2/VBoxContainer" unique_id=1539679530]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Lead Artist - Sala Lander"
+
+[node name="Label5" type="Label" parent="GridContainer/VBoxContainer2/VBoxContainer" unique_id=1027489895]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Artist - FrozenDeveloper"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=294389901]
+libraries/ = SubResource("AnimationLibrary_2fbfq")
+speed_scale = 0.4

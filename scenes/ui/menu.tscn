@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bab32y8754deb"]
 
 [ext_resource type="Script" uid="uid://cjttxdlagvib3" path="res://scripts/ui/menu.gd" id="1_7w7rl"]
-[ext_resource type="PackedScene" uid="uid://i735lwuv2rik" path="res://scenes/options.tscn" id="2_wedc3"]
+[ext_resource type="Texture2D" uid="uid://mp1k4h2rs4fk" path="res://assets/background placeholder.png" id="2_c2n5p"]
+[ext_resource type="PackedScene" uid="uid://i735lwuv2rik" path="res://scenes/ui/options.tscn" id="2_wedc3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aey7d"]
 bg_color = Color(1, 1, 1, 1)
@@ -43,7 +44,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.41614383, 0.50866896, 1, 1)
+color = Color(0, 0.58431375, 0.80784315, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1088021813]
+position = Vector2(576, 324)
+scale = Vector2(5.065, 5.065)
+texture = ExtResource("2_c2n5p")
 
 [node name="Label" type="Label" parent="." unique_id=531403675]
 layout_mode = 1
@@ -58,6 +64,12 @@ offset_right = 185.5
 offset_bottom = -148.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/font_size = 70
 text = "Bucket List"
 

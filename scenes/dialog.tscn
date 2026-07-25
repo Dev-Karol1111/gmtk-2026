@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bd2aygjk1rqhp" path="res://scripts/dialog_ui.gd" id="1_pkx4w"]
 [ext_resource type="Texture2D" uid="uid://wpjhsm18rke0" path="res://assets/dialog.png" id="2_36pgd"]
+[ext_resource type="PackedScene" uid="uid://nvb1b5cu0atp" path="res://scenes/time.tscn" id="3_tmfn4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nrskm"]
 font_color = Color(0, 0, 0, 1)
@@ -9,20 +10,52 @@ font_color = Color(0, 0, 0, 1)
 [node name="dialog_ui" type="CanvasLayer" unique_id=2035523184]
 script = ExtResource("1_pkx4w")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2092768601]
-position = Vector2(701, 406)
-scale = Vector2(0.7847222, 0.75617284)
+[node name="time" parent="." unique_id=314698891 instance=ExtResource("3_tmfn4")]
+
+[node name="dialog" type="Node2D" parent="." unique_id=848705548]
+visible = false
+
+[node name="second_person" type="Sprite2D" parent="dialog" unique_id=1919166761]
+position = Vector2(1021.00006, 327.00003)
+scale = Vector2(10, 10)
+
+[node name="first_person" type="Sprite2D" parent="dialog" unique_id=103403949]
+position = Vector2(97.00001, 324.75)
+scale = Vector2(10, 10)
+
+[node name="first_bg" type="Sprite2D" parent="dialog" unique_id=1851950062]
+position = Vector2(435, 395)
+scale = Vector2(0.8, 0.77)
+texture = ExtResource("2_36pgd")
+flip_h = true
+
+[node name="second_bg" type="Sprite2D" parent="dialog" unique_id=2092768601]
+position = Vector2(692, 395)
+scale = Vector2(0.8, 0.77)
 texture = ExtResource("2_36pgd")
 
-[node name="Label" type="Label" parent="." unique_id=741532287]
-offset_left = 596.0
-offset_top = 430.0
-offset_right = 1105.0
-offset_bottom = 612.0
+[node name="label_first" type="Label" parent="dialog" unique_id=741532287]
+offset_left = 17.0
+offset_top = 403.0
+offset_right = 555.0
+offset_bottom = 539.0
 label_settings = SubResource("LabelSettings_nrskm")
 
-[node name="buttons" type="HBoxContainer" parent="." unique_id=1047518401]
-offset_left = 606.0
-offset_top = 564.0
-offset_right = 1084.0
-offset_bottom = 611.0
+[node name="buttons_first" type="HBoxContainer" parent="dialog" unique_id=1047518401]
+offset_left = 10.0
+offset_top = 562.0
+offset_right = 555.0
+offset_bottom = 609.0
+
+[node name="label_second" type="Label" parent="dialog" unique_id=1456154138]
+offset_left = 563.0
+offset_top = 405.0
+offset_right = 1122.0
+offset_bottom = 541.0
+label_settings = SubResource("LabelSettings_nrskm")
+
+[node name="buttons_second" type="HBoxContainer" parent="dialog" unique_id=726457105]
+offset_left = 577.0
+offset_top = 559.0
+offset_right = 1112.0
+offset_bottom = 606.0

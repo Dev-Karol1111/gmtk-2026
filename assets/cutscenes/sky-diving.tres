@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://cbo60kasrgq5b"]
+
+[ext_resource type="Script" uid="uid://bcrqgfvwmcre0" path="res://scripts/cutscene-data.gd" id="1_ha6rn"]
+[ext_resource type="Texture2D" uid="uid://pxy1abg4nkoq" path="res://assets/cutscenes/Skydiving.png" id="1_uvfvr"]
+[ext_resource type="PackedScene" uid="uid://wqaw4pk2ld08" path="res://scenes/rooms/hospital.tscn" id="2_xa310"]
+
+[resource]
+script = ExtResource("1_ha6rn")
+image = ExtResource("1_uvfvr")
+returning_scene = ExtResource("2_xa310")
+metadata/_custom_type_script = "uid://bcrqgfvwmcre0"

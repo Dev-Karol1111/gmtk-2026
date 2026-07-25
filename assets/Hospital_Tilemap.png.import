@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ivmfotf7i5wf"
-path="res://.godot/imported/Player_Walking_North.png-f44fc0fabb87c88910d75bb15f5586e8.ctex"
+uid="uid://dyy8ucwf3xhlh"
+path="res://.godot/imported/Hospital_Tilemap.png-963d4bf430d0f4c5f8764b56631929b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raw/Player_Walking_North.png"
-dest_files=["res://.godot/imported/Player_Walking_North.png-f44fc0fabb87c88910d75bb15f5586e8.ctex"]
+source_file="res://assets/Hospital_Tilemap.png"
+dest_files=["res://.godot/imported/Hospital_Tilemap.png-963d4bf430d0f4c5f8764b56631929b1.ctex"]
 
 [params]
 
