@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://52c5bmd17trv"]
+
+[ext_resource type="Texture2D" uid="uid://yn6fuax151is" path="res://assets/cutscenes/eating_contest_thumbnail.png" id="1_4hf8d"]
+[ext_resource type="Script" uid="uid://bcrqgfvwmcre0" path="res://scripts/cutscene-data.gd" id="1_jayvc"]
+[ext_resource type="PackedScene" uid="uid://cw40rcw3utdjb" path="res://scenes/rooms/food_contest.tscn" id="2_dnpmu"]
+
+[resource]
+script = ExtResource("1_jayvc")
+image = ExtResource("1_4hf8d")
+returning_scene = ExtResource("2_dnpmu")
+metadata/_custom_type_script = "uid://bcrqgfvwmcre0"
