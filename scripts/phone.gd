@@ -16,7 +16,7 @@ func first_run() -> void:
 	if not generated_data:
 		var options2 := options.duplicate()
 		options2.shuffle()
-		var to_display := options2.slice(0,3)
+		var to_display := options2.slice(0,4)
 		
 		for o in to_display:
 			var button = Button.new()

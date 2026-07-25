@@ -9,7 +9,7 @@ func _ready() -> void:
 func handle_choice(agree: bool):
 	if agree:
 		Management.take_damage(1)
-	
+	Signals.task_finished.emit("food-contest")
 	Signals.start_cutsene.emit(load("res://assets/cutscenes/food_eating_contest.tres"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

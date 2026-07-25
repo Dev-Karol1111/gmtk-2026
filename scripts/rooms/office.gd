@@ -1,6 +1,5 @@
 extends Node2D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Signals.office_agree.connect(func():  handle_choice(true))
@@ -11,9 +10,9 @@ func handle_choice(agree: bool):
 		Management.take_damage(6)
 	else:
 		Management.take_damage(16)
-	
+	Signals.task_finished.emit("office")
 	Management.switch_scene("res://scenes/rooms/hospital.tscn")
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
