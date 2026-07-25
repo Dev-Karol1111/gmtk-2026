@@ -11,7 +11,7 @@ var generated_data := false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
-
+	
 func first_run() -> void:
 	if not generated_data:
 		var options2 := options.duplicate()
@@ -35,6 +35,7 @@ func check_option(option: String):
 	elif option == options[1]: # Food eating contest
 		Signals.start_cutsene.emit(load("res://assets/cutscenes/food_eating_contest_thumbnail.tres"))
 	elif option == options[2]: # Go to work
-		Management.switch_scene("res://scenes/rooms/office.tscn")
+		#Management.switch_scene("res://scenes/rooms/office.tscn")
+		Signals.start_cutsene.emit(load("res://assets/cutscenes/office.tres"))
 	
 		
