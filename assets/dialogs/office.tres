@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://di0r0n28vtdcl"]
+
+[ext_resource type="Script" uid="uid://d366eisakga4q" path="res://scripts/dialog_node.gd" id="1_cd4qg"]
+[ext_resource type="Texture2D" uid="uid://p4lqmkhemamb" path="res://assets/Office_tilemap.png" id="1_qpelt"]
+[ext_resource type="Script" uid="uid://ca66leic8eb4g" path="res://scripts/dialog_data.gd" id="2_yq0af"]
+[ext_resource type="Texture2D" uid="uid://dg1bcvd5tkjit" path="res://assets/player/Player_Base.png" id="4_bw5e1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo3j2"]
+atlas = ExtResource("1_qpelt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_gcaur"]
+script = ExtResource("1_cd4qg")
+id = "start"
+text = "Hi boss"
+person = "second-person"
+options = Dictionary[String, String]({
+"continue": "help"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_oh624"]
+script = ExtResource("1_cd4qg")
+id = "help"
+text = "Could you help me with computer?"
+person = "first-person"
+options = Dictionary[String, String]({
+"no": "disagree",
+"yes": "agree"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_hplsr"]
+script = ExtResource("1_cd4qg")
+id = "agree"
+signal_to_emit = "office_agree"
+end = true
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_sw2gi"]
+script = ExtResource("1_cd4qg")
+id = "disagree"
+signal_to_emit = "office_disagree"
+end = true
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[resource]
+script = ExtResource("2_yq0af")
+id = "office"
+starting_id = "start"
+nodes = Array[ExtResource("1_cd4qg")]([SubResource("Resource_gcaur"), SubResource("Resource_oh624"), SubResource("Resource_hplsr"), SubResource("Resource_sw2gi")])
+first_person = SubResource("AtlasTexture_vo3j2")
+second_person = ExtResource("4_bw5e1")
+metadata/_custom_type_script = "uid://ca66leic8eb4g"

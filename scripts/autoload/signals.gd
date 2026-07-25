@@ -17,3 +17,6 @@ signal sandcastle_disagree
 
 signal toilet_agree
 signal toilet_disagree
+
+signal office_agree
+signal office_disagree
