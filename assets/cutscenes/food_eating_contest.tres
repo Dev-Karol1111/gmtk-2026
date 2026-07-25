@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CutsceneData" format=3 uid="uid://bxeiiepgl6esy"]
+
+[ext_resource type="Texture2D" uid="uid://bdcshld3otgk4" path="res://assets/cutscenes/food_eating_contest.png" id="1_vi70r"]
+[ext_resource type="PackedScene" uid="uid://wqaw4pk2ld08" path="res://scenes/rooms/hospital.tscn" id="2_rinpi"]
+[ext_resource type="Script" uid="uid://bcrqgfvwmcre0" path="res://scripts/cutscene-data.gd" id="3_dar14"]
+
+[resource]
+script = ExtResource("3_dar14")
+image = ExtResource("1_vi70r")
+returning_scene = ExtResource("2_rinpi")
+metadata/_custom_type_script = "uid://bcrqgfvwmcre0"

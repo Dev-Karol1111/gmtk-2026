@@ -9,6 +9,8 @@ extends CanvasLayer
 @onready var first_person : Sprite2D = $dialog/first_person
 @onready var second_person : Sprite2D = $dialog/second_person
 @onready var dialog : Node2D = $dialog
+@onready var taking_damage_animation : Node2D = $taking_damage
+@onready var dying_animation : Node2D = $dying_animation
 
 var current_dialog : DialogData
 var current_node : DialogNode
@@ -17,7 +19,19 @@ func _ready() -> void:
 	dialog.hide()
 	show()
 	Signals.start_dialog.connect(start_dialog)
+	Signals.taking_damage_animation.connect(show_taking_damage_animation)
+	Signals.dying_animation.connect(death)
 
+func death():
+	dying_animation.show()
+	await get_tree().create_timer(3).timeout
+	# TODO: Add end screen
+
+func show_taking_damage_animation():
+	taking_damage_animation.show()
+	await get_tree().create_timer(3).timeout
+	taking_damage_animation.hide()
+	
 func start_dialog(data: DialogData) -> void:
 	Management.mode = "dialog"
 	dialog.show()
@@ -41,7 +55,7 @@ func show_block(node_id: String) -> void:
 	var label : Label
 	var buttons_container : HBoxContainer
 	
-	if current_node.person == "person-first":
+	if current_node.person == "first-person":
 		bg_second.hide()
 		buttons_container_second.hide()
 		label_second.hide()
@@ -53,16 +67,16 @@ func show_block(node_id: String) -> void:
 		label = label_first
 		buttons_container = buttons_container_first
 	else:
-		bg_second.hide()
-		buttons_container_second.hide()
-		label_second.hide()
-		second_person.hide()
-		first_person.show()
-		bg_first.show()
-		buttons_container_first.show()
-		label_first.show()
-		label = label_first
-		buttons_container = buttons_container_first
+		bg_first.hide()
+		buttons_container_first.hide()
+		label_first.hide()
+		first_person.hide()
+		second_person.show()
+		bg_second.show()
+		buttons_container_second.show()
+		label_second.show()
+		label = label_second
+		buttons_container = buttons_container_second
 	
 	label.text = current_node.text
 	

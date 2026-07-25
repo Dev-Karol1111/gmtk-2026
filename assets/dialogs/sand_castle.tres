@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://d366eisakga4q"
 [sub_resource type="Resource" id="Resource_ptokj"]
 script = ExtResource("1_u1y8m")
 id = "disagree"
-signal_to_emit = "sandcastle_diagree"
+signal_to_emit = "sandcastle_disagree"
 end = true
 metadata/_custom_type_script = "uid://d366eisakga4q"
 
