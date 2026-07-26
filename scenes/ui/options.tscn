@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://i735lwuv2rik"]
 
 [ext_resource type="Script" uid="uid://doxcm2f85knoe" path="res://scripts/ui/options.gd" id="1_c2u1v"]
+[ext_resource type="PackedScene" uid="uid://p54705lr6s6d" path="res://scripts/h_slider.tscn" id="2_lr2b1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aey7d"]
 
@@ -78,12 +79,14 @@ theme_override_constants/separation = 16
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_aey7d")
-text = "Audio"
+text = "Music
+"
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer" unique_id=1852850996]
+[node name="HSlider" parent="VBoxContainer/HBoxContainer" unique_id=1945352404 instance=ExtResource("2_lr2b1")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+busName = "music"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1496869275]
 layout_mode = 2
