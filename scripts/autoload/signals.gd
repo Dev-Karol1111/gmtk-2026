@@ -6,6 +6,7 @@ signal start_cutsene(data: CutsceneData)
 signal taking_damage_animation
 signal dying_animation
 signal task_finished(taks_name: String)
+signal change_scene(path: String)
 
 # STORY
 signal old_firend_agree

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cjttxdlagvib3" path="res://scripts/ui/menu.gd" id="1_7w7rl"]
 [ext_resource type="Texture2D" uid="uid://mp1k4h2rs4fk" path="res://assets/background placeholder.png" id="2_c2n5p"]
 [ext_resource type="PackedScene" uid="uid://i735lwuv2rik" path="res://scenes/ui/options.tscn" id="2_wedc3"]
+[ext_resource type="PackedScene" uid="uid://bditteqys8ad" path="res://scenes/canvas_layer.tscn" id="4_w6y0u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aey7d"]
 bg_color = Color(1, 1, 1, 1)
@@ -126,6 +127,8 @@ text = "Quit
 [node name="options" parent="." unique_id=670678143 instance=ExtResource("2_wedc3")]
 visible = false
 layout_mode = 1
+
+[node name="CanvasLayer" parent="." unique_id=780285229 instance=ExtResource("4_w6y0u")]
 
 [connection signal="pressed" from="VBoxContainer/btnStart" to="." method="_on_btn_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/btnOption" to="." method="_on_btn_option_pressed"]
