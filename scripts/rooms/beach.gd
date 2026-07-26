@@ -8,6 +8,7 @@ func _ready() -> void:
 func handle_choice(agree : bool):
 	if agree:
 		Management.take_damage(2)
+		await get_tree().create_timer(3).timeout
 	Signals.task_finished.emit("swimming-with-shark")
 	Signals.start_cutsene.emit(load("res://assets/cutscenes/swim-with-sharks.tres"))
 

@@ -10,6 +10,7 @@ func handle_choice(agree: bool):
 		Management.take_damage(6)
 	else:
 		Management.take_damage(16)
+	await get_tree().create_timer(3).timeout
 	Signals.task_finished.emit("office")
 	Management.switch_scene("res://scenes/rooms/hospital.tscn")
 	
