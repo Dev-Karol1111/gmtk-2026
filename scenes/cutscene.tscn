@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://u6jtxl653omn"]
+
+[ext_resource type="Script" uid="uid://csyjxl50sa68o" path="res://scripts/cutscene.gd" id="1_edmg7"]
+[ext_resource type="VideoStream" uid="uid://fu2arhknt7h5" path="res://assets/cutscenes/office_cutscene.ogv" id="2_a320b"]
+
+[node name="cutscene" type="Node2D" unique_id=830795364]
+script = ExtResource("1_edmg7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=943357056]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1186801431]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=928054616]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("2_a320b")
+autoplay = true
