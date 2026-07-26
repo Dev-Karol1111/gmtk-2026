@@ -18,6 +18,10 @@ var finished_tasks : Dictionary[String, bool] = {
 
 var time_remain := 24
 func _ready() -> void:
+	for t in finished_tasks.keys():
+		finished_tasks[t] = false
+	for d in finished_dialogs.keys():
+		finished_dialogs[d] = false
 	Signals.old_firend_agree.connect(old_firend_agreed)
 	Signals.take_damage.connect(take_damage)
 	Signals.start_cutsene.connect(start_cutscene)
@@ -26,7 +30,7 @@ func _ready() -> void:
 func start_game() -> void:
 	await get_tree().create_timer(0.005).timeout
 	switch_scene("res://scenes/rooms/hospital.tscn")
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(2.5).timeout
 	Signals.start_dialog.emit(load("res://assets/dialogs/wake_up.tres"))
 	current_building = "hospital"
 
@@ -128,6 +132,7 @@ func start_cutscene(data: CutsceneData):
 	switch_scene_packed(data.returning_scene)
 
 func check_tasks(task_name: String) -> void:
+	await get_tree().create_timer(6).timeout
 	finished_tasks[task_name] = true
 	for i in finished_tasks.values():
 		if not i:

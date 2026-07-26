@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://ca66leic8eb4g" path="res://scripts/dialog_data.gd" id="2_yq0af"]
 [ext_resource type="Texture2D" uid="uid://dg1bcvd5tkjit" path="res://assets/player/Player_Base.png" id="4_bw5e1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vo3j2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpelt"]
 atlas = ExtResource("1_qpelt")
 region = Rect2(96, 0, 32, 32)
 
@@ -22,7 +22,8 @@ metadata/_custom_type_script = "uid://d366eisakga4q"
 [sub_resource type="Resource" id="Resource_oh624"]
 script = ExtResource("1_cd4qg")
 id = "help"
-text = "Could you help me with computer?"
+text = "Good morning,
+Could you help me with computer?"
 person = "first-person"
 options = Dictionary[String, String]({
 "no": "disagree",
@@ -32,23 +33,42 @@ metadata/_custom_type_script = "uid://d366eisakga4q"
 
 [sub_resource type="Resource" id="Resource_hplsr"]
 script = ExtResource("1_cd4qg")
-id = "agree"
+id = "agree_end"
 signal_to_emit = "office_agree"
 end = true
 metadata/_custom_type_script = "uid://d366eisakga4q"
 
 [sub_resource type="Resource" id="Resource_sw2gi"]
 script = ExtResource("1_cd4qg")
-id = "disagree"
+id = "disagree_end"
 signal_to_emit = "office_disagree"
 end = true
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_qpelt"]
+script = ExtResource("1_cd4qg")
+id = "agree"
+text = "Yes, of course!"
+options = Dictionary[String, String]({
+"continue": "agree_end"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_bw5e1"]
+script = ExtResource("1_cd4qg")
+id = "disagree"
+text = "No, I'm not your pet
+[You got fired]"
+options = Dictionary[String, String]({
+"continue": "disagree_end"
+})
 metadata/_custom_type_script = "uid://d366eisakga4q"
 
 [resource]
 script = ExtResource("2_yq0af")
 id = "office"
 starting_id = "start"
-nodes = Array[ExtResource("1_cd4qg")]([SubResource("Resource_gcaur"), SubResource("Resource_oh624"), SubResource("Resource_hplsr"), SubResource("Resource_sw2gi")])
-first_person = SubResource("AtlasTexture_vo3j2")
+nodes = Array[ExtResource("1_cd4qg")]([SubResource("Resource_gcaur"), SubResource("Resource_oh624"), SubResource("Resource_hplsr"), SubResource("Resource_sw2gi"), SubResource("Resource_qpelt"), SubResource("Resource_bw5e1"), null])
+first_person = SubResource("AtlasTexture_qpelt")
 second_person = ExtResource("4_bw5e1")
 metadata/_custom_type_script = "uid://ca66leic8eb4g"

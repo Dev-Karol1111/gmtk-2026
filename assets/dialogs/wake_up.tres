@@ -16,7 +16,7 @@ terminaly ill."
 person = "first-person"
 options = Dictionary[String, String]({
 "Are you kidding me?!": "q-joke",
-"How long do I have left?": "a-time-left",
+"How long do I have left?": "q-time-left",
 "Ow uh ok then...": "continue"
 })
 metadata/_custom_type_script = "uid://d366eisakga4q"
@@ -33,7 +33,7 @@ metadata/_custom_type_script = "uid://d366eisakga4q"
 
 [sub_resource type="Resource" id="Resource_4cd6u"]
 script = ExtResource("1_ijhw1")
-id = "q-joke"
+id = "a-joke"
 text = "Sadly I'm not, you will die in 24 hours"
 person = "first-person"
 options = Dictionary[String, String]({
@@ -66,11 +66,21 @@ options = Dictionary[String, String]({
 })
 metadata/_custom_type_script = "uid://d366eisakga4q"
 
+[sub_resource type="Resource" id="Resource_4wims"]
+script = ExtResource("1_ijhw1")
+id = "q-joke"
+text = "Are you kidding me?!"
+person = "second-person"
+options = Dictionary[String, String]({
+"continue": "a-joke"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
 [resource]
 script = ExtResource("2_d30oi")
 id = "wake-up"
 starting_id = "doctor-1"
-nodes = Array[ExtResource("1_ijhw1")]([SubResource("Resource_ijhw1"), SubResource("Resource_d30oi"), SubResource("Resource_4cd6u"), SubResource("Resource_4ykdn"), SubResource("Resource_cxbdb"), SubResource("Resource_021uq")])
+nodes = Array[ExtResource("1_ijhw1")]([SubResource("Resource_ijhw1"), SubResource("Resource_d30oi"), SubResource("Resource_4cd6u"), SubResource("Resource_4ykdn"), SubResource("Resource_cxbdb"), SubResource("Resource_021uq"), SubResource("Resource_4wims")])
 first_person = ExtResource("1_4cd6u")
 second_person = ExtResource("4_4ykdn")
 metadata/_custom_type_script = "uid://ca66leic8eb4g"

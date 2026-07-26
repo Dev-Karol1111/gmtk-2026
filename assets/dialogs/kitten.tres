@@ -1,12 +1,19 @@
 [gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://cpx7ai36gclau"]
 
 [ext_resource type="Script" uid="uid://d366eisakga4q" path="res://scripts/dialog_node.gd" id="1_o1eqv"]
+[ext_resource type="Texture2D" uid="uid://bvejlg4jyscee" path="res://assets/Skydiving_tilemap.png" id="1_taser"]
 [ext_resource type="Script" uid="uid://ca66leic8eb4g" path="res://scripts/dialog_data.gd" id="2_hvo8b"]
+[ext_resource type="Texture2D" uid="uid://dg1bcvd5tkjit" path="res://assets/player/Player_Base.png" id="4_87jng"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyrdv"]
+atlas = ExtResource("1_taser")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_taser"]
 script = ExtResource("1_o1eqv")
 id = "start"
 text = "Miauw, could you pet me please miauw?"
+person = "first-person"
 options = Dictionary[String, String]({
 "no": "disagree",
 "yes": "agree"
@@ -15,21 +22,43 @@ metadata/_custom_type_script = "uid://d366eisakga4q"
 
 [sub_resource type="Resource" id="Resource_87jng"]
 script = ExtResource("1_o1eqv")
-id = "disagree"
+id = "disagree_end"
 signal_to_emit = "kitten_disagree"
 end = true
 metadata/_custom_type_script = "uid://d366eisakga4q"
 
 [sub_resource type="Resource" id="Resource_o1eqv"]
 script = ExtResource("1_o1eqv")
-id = "agree"
+id = "agree_end"
 signal_to_emit = "kitten_agree"
 end = true
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_2x1jc"]
+script = ExtResource("1_o1eqv")
+id = "agree"
+text = "Yes, I can help you!"
+person = "second-person"
+options = Dictionary[String, String]({
+"continue": "agree_end"
+})
+metadata/_custom_type_script = "uid://d366eisakga4q"
+
+[sub_resource type="Resource" id="Resource_nfmnx"]
+script = ExtResource("1_o1eqv")
+id = "disagree"
+text = "No, I won't help you"
+person = "second-person"
+options = Dictionary[String, String]({
+"continue": "disagree_end"
+})
 metadata/_custom_type_script = "uid://d366eisakga4q"
 
 [resource]
 script = ExtResource("2_hvo8b")
 id = "kitten"
 starting_id = "start"
-nodes = Array[ExtResource("1_o1eqv")]([SubResource("Resource_taser"), SubResource("Resource_87jng"), SubResource("Resource_o1eqv")])
+nodes = Array[ExtResource("1_o1eqv")]([SubResource("Resource_taser"), SubResource("Resource_87jng"), SubResource("Resource_o1eqv"), SubResource("Resource_2x1jc"), SubResource("Resource_nfmnx")])
+first_person = SubResource("AtlasTexture_fyrdv")
+second_person = ExtResource("4_87jng")
 metadata/_custom_type_script = "uid://ca66leic8eb4g"

@@ -137,6 +137,11 @@ offset_bottom = 606.0
 [node name="taking_damage" type="Node2D" parent="." unique_id=155604037]
 visible = false
 
+[node name="ColorRect" type="ColorRect" parent="taking_damage" unique_id=1243280661]
+offset_right = 1153.0
+offset_bottom = 644.0
+color = Color(0, 0, 0, 0.5568628)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="taking_damage" unique_id=180583888]
 position = Vector2(577, 325)
 scale = Vector2(8.963541, 7.9343247)
@@ -147,6 +152,11 @@ frame_progress = 0.7477662
 
 [node name="dying_animation" type="Node2D" parent="." unique_id=727087256]
 visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="dying_animation" unique_id=39916038]
+offset_right = 1153.0
+offset_bottom = 644.0
+color = Color(0, 0, 0, 0.5568628)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="dying_animation" unique_id=1925039836]
 position = Vector2(563, 325)
