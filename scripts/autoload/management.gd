@@ -22,6 +22,9 @@ func _ready() -> void:
 		finished_tasks[t] = false
 	for d in finished_dialogs.keys():
 		finished_dialogs[d] = false
+	
+	mode = "dialog"
+	
 	Signals.old_firend_agree.connect(old_firend_agreed)
 	Signals.take_damage.connect(take_damage)
 	Signals.start_cutsene.connect(start_cutscene)

@@ -78,7 +78,7 @@ func show_block(node_id: String) -> void:
 		label = label_second
 		buttons_container = buttons_container_second
 	
-	label.text = current_node.text
+	#label.text = current_node.text
 	
 	if current_node.signal_to_emit:
 		Signals.emit_signal(current_node.signal_to_emit)
@@ -86,6 +86,8 @@ func show_block(node_id: String) -> void:
 	for child in buttons_container.get_children():
 		child.queue_free()
 	
+	await show_text(label, current_node.text)
+		
 	for option in current_node.options:
 		var next_id := current_node.options[option]
 		var button := Button.new()
@@ -93,7 +95,8 @@ func show_block(node_id: String) -> void:
 		buttons_container.add_child(button)
 		
 		button.pressed.connect(func(): show_block(next_id))
-
+	
+	
 func end_conversation():
 	dialog.hide()
 	Management.finished_dialogs.set(current_dialog.id, true)
@@ -102,3 +105,15 @@ func end_conversation():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func show_text(label: Label, text : String):
+	const speed = 30.0
+	label.text = text
+	label.visible_ratio = 0.0
+	var duration = text.length() / speed
+	var tween = create_tween()
+	tween.tween_property(label,  "visible_ratio", 1.0, duration)
+	
+	await tween.finished
+	
+	
