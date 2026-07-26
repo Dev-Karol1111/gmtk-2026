@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://bab32y8754deb"]
 
 [ext_resource type="Script" uid="uid://cjttxdlagvib3" path="res://scripts/ui/menu.gd" id="1_7w7rl"]
-[ext_resource type="Texture2D" uid="uid://mp1k4h2rs4fk" path="res://assets/background placeholder.png" id="2_c2n5p"]
+[ext_resource type="Texture2D" uid="uid://chkqnd3es0lk6" path="res://assets/menu.png" id="2_c2n5p"]
 [ext_resource type="PackedScene" uid="uid://i735lwuv2rik" path="res://scenes/ui/options.tscn" id="2_wedc3"]
-[ext_resource type="PackedScene" uid="uid://bditteqys8ad" path="res://scenes/canvas_layer.tscn" id="4_w6y0u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aey7d"]
 bg_color = Color(1, 1, 1, 1)
@@ -38,41 +37,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7w7rl")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=238241140]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1089108288]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.58431375, 0.80784315, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1088021813]
-position = Vector2(576, 324)
-scale = Vector2(5.065, 5.065)
 texture = ExtResource("2_c2n5p")
-
-[node name="Label" type="Label" parent="." unique_id=531403675]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -185.5
-offset_top = -244.0
-offset_right = 185.5
-offset_bottom = -148.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 10
-theme_override_constants/shadow_outline_size = 5
-theme_override_font_sizes/font_size = 70
-text = "Bucket List"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1827790929]
 layout_mode = 1
@@ -82,9 +54,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -106.25
-offset_top = -21.0
+offset_top = -79.0
 offset_right = 106.25
-offset_bottom = 21.0
+offset_bottom = 79.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -127,8 +99,6 @@ text = "Quit
 [node name="options" parent="." unique_id=670678143 instance=ExtResource("2_wedc3")]
 visible = false
 layout_mode = 1
-
-[node name="CanvasLayer" parent="." unique_id=780285229 instance=ExtResource("4_w6y0u")]
 
 [connection signal="pressed" from="VBoxContainer/btnStart" to="." method="_on_btn_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/btnOption" to="." method="_on_btn_option_pressed"]

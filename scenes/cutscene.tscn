@@ -9,6 +9,7 @@ script = ExtResource("1_edmg7")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=943357056]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1186801431]
+zoom = Vector2(1.1, 1.1)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=928054616]
 visible = false
