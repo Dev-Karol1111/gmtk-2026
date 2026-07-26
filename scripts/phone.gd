@@ -21,7 +21,10 @@ func first_run() -> void:
 		for o in to_display:
 			var button = Button.new()
 			button.text = o
-			button.pressed.connect(check_option.bind(button.text))
+			if check_taken(o):
+				button.disabled = true
+			else:
+				button.pressed.connect(check_option.bind(button.text))
 			options_container.add_child(button)
 		
 		generated_data = true
@@ -37,5 +40,22 @@ func check_option(option: String):
 	elif option == options[2]: # Go to work
 		#Management.switch_scene("res://scenes/rooms/office.tscn")
 		Signals.start_cutsene.emit(load("res://assets/cutscenes/office.tres"))
-	
+
+func check_taken(text: String) -> bool:
+	if text == options[0]:
+		if Management.finished_tasks["sky-diving"]:
+			return true
+		return false
+	elif text == options[1]:
+		if Management.finished_tasks["food-contest"]:
+			return true
+		return false
+	elif text == options[2]:
+		if Management.finished_tasks["office"]:
+			return true
+		return false
+	else:
+		if Management.finished_tasks["swimming-with-shark"]:
+			return true
+		return false
 		

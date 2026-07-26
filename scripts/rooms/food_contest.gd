@@ -9,6 +9,7 @@ func _ready() -> void:
 func handle_choice(agree: bool):
 	if agree:
 		Management.take_damage(1)
+		await get_tree().create_timer(3).timeout
 	Signals.task_finished.emit("food-contest")
 	Signals.start_cutsene.emit(load("res://assets/cutscenes/food_eating_contest.tres"))
 

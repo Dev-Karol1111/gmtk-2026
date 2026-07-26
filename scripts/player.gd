@@ -11,7 +11,9 @@ func _process(delta: float) -> void:
 		camera.zoom = Vector2(6,6)
 
 func _physics_process(delta: float) -> void:
-	if Management.mode == "dialog": return
+	if Management.mode == "dialog":
+		$AnimatedSprite2D.play("idle")
+		return
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	if direction != Vector2.ZERO:

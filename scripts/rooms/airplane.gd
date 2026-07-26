@@ -9,6 +9,7 @@ func _ready() -> void:
 func kitten_choice(agreed: bool):
 	if agreed:
 		Management.take_damage(1)
+		await get_tree().create_timer(3).timeout
 	Signals.task_finished.emit("sky-diving")
 	Signals.start_cutsene.emit(load("res://assets/cutscenes/sky-diving.tres"))
 
