@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://dm15lkcmsdmsr"
 
 Management="*uid://b7iqq3wfnxks3"
 Signals="*uid://bdhq7o8j7sjgo"
+AudioManager="*uid://b1ro61xeqffp0"
 
 [display]
 

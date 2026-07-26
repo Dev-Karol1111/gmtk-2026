@@ -33,6 +33,7 @@ func _ready() -> void:
 func start_game() -> void:
 	await get_tree().create_timer(0.005).timeout
 	switch_scene("res://scenes/rooms/hospital.tscn")
+	AudioManager.play_music()
 	await get_tree().create_timer(2.5).timeout
 	Signals.start_dialog.emit(load("res://assets/dialogs/wake_up.tres"))
 	current_building = "hospital"
