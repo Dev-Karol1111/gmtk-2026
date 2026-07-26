@@ -87,7 +87,6 @@ script = ExtResource("1_pkx4w")
 [node name="time" parent="." unique_id=314698891 instance=ExtResource("3_tmfn4")]
 
 [node name="dialog" type="Node2D" parent="." unique_id=848705548]
-visible = false
 
 [node name="second_person" type="Sprite2D" parent="dialog" unique_id=1919166761]
 position = Vector2(1021.00006, 327.00003)
@@ -98,15 +97,15 @@ position = Vector2(97.00001, 324.75)
 scale = Vector2(10, 10)
 
 [node name="first_bg" type="Sprite2D" parent="dialog" unique_id=1851950062]
-position = Vector2(435, 395)
+position = Vector2(139, 395.00003)
+scale = Vector2(0.8, 0.77)
+texture = ExtResource("2_36pgd")
+
+[node name="second_bg" type="Sprite2D" parent="dialog" unique_id=2092768601]
+position = Vector2(1013, 395.00003)
 scale = Vector2(0.8, 0.77)
 texture = ExtResource("2_36pgd")
 flip_h = true
-
-[node name="second_bg" type="Sprite2D" parent="dialog" unique_id=2092768601]
-position = Vector2(692, 395)
-scale = Vector2(0.8, 0.77)
-texture = ExtResource("2_36pgd")
 
 [node name="label_first" type="Label" parent="dialog" unique_id=741532287]
 offset_left = 17.0
@@ -116,30 +115,30 @@ offset_bottom = 539.0
 label_settings = SubResource("LabelSettings_nrskm")
 
 [node name="buttons_first" type="HBoxContainer" parent="dialog" unique_id=1047518401]
-offset_left = 10.0
+offset_left = 17.0
 offset_top = 562.0
-offset_right = 555.0
+offset_right = 562.0
 offset_bottom = 609.0
 
 [node name="label_second" type="Label" parent="dialog" unique_id=1456154138]
-offset_left = 563.0
+offset_left = 589.0
 offset_top = 405.0
-offset_right = 1122.0
+offset_right = 1131.0
 offset_bottom = 541.0
 label_settings = SubResource("LabelSettings_nrskm")
 
 [node name="buttons_second" type="HBoxContainer" parent="dialog" unique_id=726457105]
-offset_left = 577.0
+offset_left = 593.0
 offset_top = 559.0
-offset_right = 1112.0
+offset_right = 1128.0
 offset_bottom = 606.0
 
 [node name="taking_damage" type="Node2D" parent="." unique_id=155604037]
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="taking_damage" unique_id=1243280661]
-offset_right = 1153.0
-offset_bottom = 644.0
+offset_right = 3819.0
+offset_bottom = 1821.0
 color = Color(0, 0, 0, 0.5568628)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="taking_damage" unique_id=180583888]
@@ -154,8 +153,8 @@ frame_progress = 0.7477662
 visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="dying_animation" unique_id=39916038]
-offset_right = 1153.0
-offset_bottom = 644.0
+offset_right = 3507.0
+offset_bottom = 2083.0
 color = Color(0, 0, 0, 0.5568628)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="dying_animation" unique_id=1925039836]

@@ -291,7 +291,7 @@ position = Vector2(119, 83)
 [node name="dialog_ui" parent="." unique_id=2035523184 instance=ExtResource("3_cxbdb")]
 
 [node name="pickup" parent="." unique_id=274059745 instance=ExtResource("4_ptr5v")]
-position = Vector2(31, 103)
+position = Vector2(41, 104)
 data = ExtResource("5_6if2h")
 
 [node name="phone" parent="." unique_id=687002674 instance=ExtResource("6_6if2h")]
